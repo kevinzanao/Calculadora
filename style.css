@@ -1,0 +1,162 @@
+:root {
+    --background: #D4F7B5;
+    --calculator-background: #F4FDEC;
+    --secondary-color: #D4F7B5;
+    --shadow-color: #DAE0E7;
+    --numbers-color: #364156;
+    --symbols-color: #61B814;
+    --shadow-config: 0em .1em .1em .1em var(--shadow-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: "Inter", sans-serif;
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+
+.main {
+    min-width: 40%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main h1 {
+    margin-bottom: .2em;
+    color: var(--numbers-color);
+    border-bottom: 2px solid var(--symbols-color);
+}
+
+.main p {
+    margin-bottom: 1.5em;
+    color: var(--numbers-color);
+    border-bottom: 2px solid var(--symbols-color);
+    padding: .2em;
+}
+
+.calculator {
+    max-width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: space-evenly;
+    border-radius: 5%;
+    overflow: hidden;
+    box-shadow: var(--shadow-config);
+    background-color: var(--calculator-background);  
+}
+
+.calculator .screen {
+    width: 100%;
+    height: 20%;
+}
+
+
+.calculator .screen input {
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    text-align: right;
+    padding: 1.5em 1em 0 1em;
+    color: var(--numbers-color);
+    background-color: var(--calculator-background);
+}
+
+.calculator .keyboard {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    padding: .5em 1em;
+}
+
+.calculator .keyboard .numbers,
+.calculator .keyboard .symbols {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.calculator .keyboard .symbols {
+    width: 25%;
+    padding-left: 1em;
+}
+
+.calculator .keyboard .numbers .line button,
+.calculator .keyboard .symbols .line button {
+    padding: 1em;
+    border: none;
+    border-radius: 5%;
+    box-shadow: var(--shadow-config);
+    background-color: var(--calculator-background);
+    font-size: 1em;
+}
+
+.calculator .keyboard .symbols .line button:last-child {
+    background-color: var(--secondary-color);
+}
+
+.calculator .keyboard .line {
+    display: flex;
+    width: 100%;
+}
+
+
+.calculator .keyboard #last-line {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+} 
+
+.calculator .keyboard .numbers button {
+    width: 50%;
+}
+
+.calculator .keyboard .numbers .line button:nth-child(2) {
+    margin: 0 1em;
+}
+
+.calculator .keyboard .numbers .line .number {
+    color: var(--numbers-color);
+}
+
+.calculator .keyboard .numbers .line .clean {
+    color: #DE1735;
+}
+
+.calculator .keyboard .symbols .line button {
+    color: var(--symbols-color);
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 425px) {
+    .calculator {
+        max-width: 65%;
+    }
+}
+
+@media (max-width: 375px) {
+    .calculator {
+        max-width:  75%;
+    }
+}
